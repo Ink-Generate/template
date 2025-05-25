@@ -1,112 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Poppins&family=Playfair+Display&family=DM+Sans&family=Rubik&family=Lora&family=Inter&family=Raleway&display=swap');
+/* fonts.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600&family=Lora&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Theme Variables */
 :root {
+  /* Font Families */
   --font-sans: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-heading: 'Inter', sans-serif, 'Playfair Display', serif;
+  --font-heading: 'Playfair Display', serif;
   --font-serif: 'Lora', serif;
-  --font-mono: 'Fira Code', monospace; /* Optional */
+  
+  /* Light Theme Colors */
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --primary: 243 75% 59%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 4.8% 95.9%;
+  --muted: 240 4.8% 95.9%;
+  --border: 240 5.9% 90%;
 }
-
-@layer base {
-  :root {
-    /* Base Colors */
-    --color-white: 0 0% 100%;
-    --color-black: 222.2 84% 4.9%;
-
-    /* Brand Colors */
-    --brand-primary: 243 75% 59%;
-    --brand-secondary: 210 40% 96.1%;
-    --brand-accent: 291 64% 42%;
-
-    /* UI Colors */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5% 64.9%;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.dark {
+  /* Dark Theme Colors */
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: 243 75% 59%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 3.7% 15.9%;
+  --muted: 240 3.7% 15.9%;
+  --border: 240 3.7% 15.9%;
 }
-
-@layer components {
-  .container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }  
-  .section {
-    @apply py-12 md:py-16;
-  }
-}
-
-
+/* Base Styles */
 body {
-  font-family: var(--font-body);
+  @apply bg-background text-foreground font-sans;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  @apply font-heading;
 }
-code, pre {
-  font-family: var(--font-mono);
+/* Layout Components */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
+.section {
+  @apply py-12 md:py-16;
+}
+/* Typography Utilities */
 .text-title {
-  @apply text-3xl font-heading;
+  @apply text-3xl md:text-4xl font-bold tracking-tight;
 }
 .text-subtitle {
-  @apply text-xl font-heading;
+  @apply text-xl font-semibold text-muted-foreground;
 }
 .text-body {
-  @apply text-base font-body;
-}
-.text-caption {
-  @apply text-sm font-body text-muted-foreground;
-}
-
-@layer utilities {
+  @apply text-base leading-relaxed;
 }

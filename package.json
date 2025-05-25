@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@shadcn/ui": "^0.0.4",
     "@tailwindcss/typography": "^0.5.16",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.21",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
