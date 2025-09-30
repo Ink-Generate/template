@@ -1,0 +1,194 @@
+{
+  "src/main.tsx": [
+    {
+      "id": "Unknown-29bd0ed3",
+      "file": "src/main.tsx",
+      "start": {
+        "line": 8,
+        "column": 2
+      },
+      "end": {
+        "line": 8,
+        "column": 20
+      },
+      "component": "Unknown",
+      "type": "component",
+      "props": {}
+    },
+    {
+      "id": "App-196a0a7e",
+      "file": "src/main.tsx",
+      "start": {
+        "line": 9,
+        "column": 4
+      },
+      "end": {
+        "line": 9,
+        "column": 11
+      },
+      "component": "App",
+      "type": "component",
+      "props": {}
+    }
+  ],
+  "src/App.tsx": [
+    {
+      "id": "div-7637c925",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 41,
+        "column": 4
+      },
+      "end": {
+        "line": 41,
+        "column": 9
+      },
+      "component": "div",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "section-118883da",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 42,
+        "column": 6
+      },
+      "end": {
+        "line": 42,
+        "column": 69
+      },
+      "component": "section",
+      "type": "html",
+      "props": {
+        "style": true
+      }
+    },
+    {
+      "id": "h1-e24778e3",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 43,
+        "column": 8
+      },
+      "end": {
+        "line": 43,
+        "column": 12
+      },
+      "component": "h1",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "p-85408b33",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 44,
+        "column": 8
+      },
+      "end": {
+        "line": 44,
+        "column": 11
+      },
+      "component": "p",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "img-86b1f849",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 45,
+        "column": 8
+      },
+      "end": {
+        "line": 45,
+        "column": 71
+      },
+      "component": "img",
+      "type": "html",
+      "props": {
+        "src": true,
+        "alt": true
+      }
+    },
+    {
+      "id": "div-f03f13c4",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 46,
+        "column": 8
+      },
+      "end": {
+        "line": 46,
+        "column": 13
+      },
+      "component": "div",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "i-7d9906aa",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 47,
+        "column": 10
+      },
+      "end": {
+        "line": 47,
+        "column": 55
+      },
+      "component": "i",
+      "type": "html",
+      "props": {
+        "className": true,
+        "aria-hidden": true
+      }
+    },
+    {
+      "id": "section-d7eeb3fb",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 49,
+        "column": 8
+      },
+      "end": {
+        "line": 49,
+        "column": 17
+      },
+      "component": "section",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "h2-a5434db9",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 50,
+        "column": 10
+      },
+      "end": {
+        "line": 50,
+        "column": 14
+      },
+      "component": "h2",
+      "type": "html",
+      "props": {}
+    },
+    {
+      "id": "p-e9bfd4d0",
+      "file": "src/App.tsx",
+      "start": {
+        "line": 51,
+        "column": 10
+      },
+      "end": {
+        "line": 51,
+        "column": 13
+      },
+      "component": "p",
+      "type": "html",
+      "props": {}
+    }
+  ]
+}
