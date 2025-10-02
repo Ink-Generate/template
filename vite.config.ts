@@ -12,6 +12,11 @@ export default defineConfig(({ command }) => {
         "@": path.resolve(__dirname, "src"),
       },
     },
+    server: {
+      watch: {
+        ignored: ['**/markers.json', '**/.markers/**']
+      }
+    },
     plugins: [
       react(),
       isDev &&

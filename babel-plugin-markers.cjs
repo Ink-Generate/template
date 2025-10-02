@@ -10,47 +10,40 @@ module.exports = function markerPlugin() {
       JSXOpeningElement(pathNode, state) {
         const loc = pathNode.node.loc;
         const file = state.file.opts.filename;
-
         if (!loc || !file) return;
 
-        // Normalize path to always use forward slashes
         const relativeFile = path
           .relative(process.cwd(), file)
           .split(path.sep)
           .join(path.posix.sep);
 
-        // Stable hash from file + line + col
         const hash = crypto
           .createHash("md5")
           .update(`${relativeFile}:${loc.start.line}:${loc.start.column}`)
           .digest("hex")
           .slice(0, 8);
 
-        const componentName = pathNode.node.name.name || "Unknown";
+        const componentName =
+          pathNode.node.name.name || pathNode.node.name?.object?.name || "Unknown";
+
         const markerId = `${componentName}-${hash}`;
 
-        // Extract props (just prop names for now)
-        const props = {};
-        pathNode.node.attributes.forEach((attr) => {
-          if (attr.type === "JSXAttribute" && attr.name?.name) {
-            props[attr.name.name] = true;
-          }
-        });
+        // --- NEW: Only inject if not already injected ---
+        const alreadyHasMarker = pathNode.node.attributes.some(
+          (attr) => attr.type === "JSXAttribute" && attr.name.name === "data-marker"
+        );
+        if (!alreadyHasMarker) {
+          pathNode.node.attributes.push({
+            type: "JSXAttribute",
+            name: { type: "JSXIdentifier", name: "data-marker" },
+            value: { type: "StringLiteral", value: markerId },
+          });
+        }
 
-        // Decide type: lowercase = HTML tag, uppercase = component
+        // Store info
         const type =
-          componentName[0] === componentName[0].toUpperCase()
-            ? "component"
-            : "html";
+          componentName[0] === componentName[0].toUpperCase() ? "component" : "html";
 
-        // Inject data-marker
-        pathNode.node.attributes.push({
-          type: "JSXAttribute",
-          name: { type: "JSXIdentifier", name: "data-marker" },
-          value: { type: "StringLiteral", value: markerId },
-        });
-
-        // Add entry
         if (!markersByFile[relativeFile]) {
           markersByFile[relativeFile] = [];
         }
@@ -61,7 +54,7 @@ module.exports = function markerPlugin() {
           end: { line: loc.end.line, column: loc.end.column },
           component: componentName,
           type,
-          props,
+          props: {},
         });
       },
     },
